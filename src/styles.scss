@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+// home.component.scss - Ajoutez ceci au début
+
+// Supprimer le scroll horizontal
+html, body {
+  overflow-x: hidden !important;
+  width: 100%;
+  position: relative;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Pour le composant home
+:host {
+  display: block;
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100%;
+}
+
+// Tous les éléments de la page
+.home-page, .app-home, app-home {
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100%;
+}
+
+// Container principal
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  
+  @media (max-width: 768px) {
+    padding: 0 16px;
+  }
+}

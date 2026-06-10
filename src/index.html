@@ -1,13 +1,92 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Portfolio</title>
+  <title>Simionix Innovation | Solutions Digitales Sur Mesure</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  
+  <!-- Meta SEO -->
+  <meta name="description" content="Simionix Innovation - Solutions digitales sur mesure, développement web et mobile, formations professionnelles au Congo. Transformez vos idées en réalité numérique.">
+  <meta name="keywords" content="développement web, applications mobiles, formation numérique, intelligence artificielle, Congo, Brazzaville">
+  <meta name="author" content="Simionix Innovation">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://simionix.com/">
+  <meta property="og:title" content="Simionix Innovation | Solutions Digitales Sur Mesure">
+  <meta property="og:description" content="Solutions digitales innovantes pour votre transformation numérique. Développement web, mobile, formations IA et plus.">
+  <meta property="og:image" content="https://simionix.com/assets/og-image.jpg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://simionix.com/">
+  <meta property="twitter:title" content="Simionix Innovation | Solutions Digitales Sur Mesure">
+  <meta property="twitter:description" content="Solutions digitales innovantes pour votre transformation numérique.">
+  <meta property="twitter:image" content="https://simionix.com/assets/og-image.jpg">
+  
+  <!-- Favicon avec fallback pour tous les navigateurs -->
+<link rel="icon" type="image/png" sizes="32x32" href="assets/fati.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/fati.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/fati.png">
+<link rel="icon" type="image/svg+xml" href="assets/fati.svg">
+  
+  <!-- Préchargement des polices -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap CSS (version minimisée) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Tailwind CSS (version CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Configuration Tailwind personnalisée -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0D5BFF',
+            'primary-light': '#4A8DFF',
+            'primary-dark': '#021B5B',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- AOS Animation Library (optionnel) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+
+  
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+  
+  <!-- AOS Animation Library JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  
 </head>
 <body>
   <app-root></app-root>
+  
+  <!-- Script d'initialisation des animations -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof AOS !== 'undefined') {
+        AOS.init({
+          duration: 800,
+          once: true,
+          offset: 100
+        });
+      }
+    });
+  </script>
 </body>
 </html>

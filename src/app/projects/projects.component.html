@@ -1,0 +1,248 @@
+<!-- ==================== PAGE PROJETS ==================== -->
+<div class="projects-page">
+  
+  <!-- Back Button -->
+  <button class="back-button" (click)="goBack()">
+    <i class="fas fa-arrow-left"></i>
+    <span>Retour</span>
+  </button>
+
+  <!-- Hero Section -->
+  <section class="projects-hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-code-branch"></i>
+          <span>Notre portfolio</span>
+        </div>
+        <h1 class="hero-title">
+          Découvrez nos
+          <span class="gradient-text">réalisations</span>
+        </h1>
+        <p class="hero-description">
+          Une sélection de projets innovants développés pour des clients prestigieux<br>
+          qui témoignent de notre expertise technique
+        </p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">{{ projects.length }}+</span>
+            <span class="stat-label">Projets</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">13</span>
+            <span class="stat-label">Clients</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Satisfaction</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-wave">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#F3F5F9" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Loading State -->
+  <div class="loading-wrapper" *ngIf="loading">
+    <div class="loader-container">
+      <div class="loader"></div>
+      <p>Chargement des projets...</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content" *ngIf="!loading">
+    <div class="container">
+      
+      <!-- Filtres -->
+      <div class="filters-wrapper">
+        <div class="filter-buttons">
+          <button 
+            class="filter-btn"
+            [class.active]="selectedCategory === 'all'"
+            (click)="filterByCategory('all')">
+            <i class="fas fa-th-large"></i>
+            Tous
+          </button>
+          <button 
+            *ngFor="let category of categories"
+            class="filter-btn"
+            [class.active]="selectedCategory === category"
+            (click)="filterByCategory(category)">
+            {{ category }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Grille des Projets -->
+      <div class="projects-grid">
+        <div *ngFor="let project of filteredProjects; let i = index" 
+             class="project-card" 
+             (click)="openProjectModal(project)">
+          <div class="card-image">
+            <img [src]="project.image" [alt]="project.title" (error)="handleImageError($event)">
+            <div class="card-year">{{ project.year }}</div>
+            <div class="card-overlay">
+              <div class="overlay-content">
+                <i class="fas fa-eye"></i>
+                <span>Voir détails</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="card-category">{{ project.category }}</div>
+            <h3 class="card-title">{{ project.title }}</h3>
+            <p class="card-client">
+              <i class="fas fa-building"></i>
+              {{ project.client }}
+            </p>
+            <p class="card-description">{{ project.description }}</p>
+            <div class="card-tech">
+              <span *ngFor="let tech of project.technologies.slice(0, 4)" class="tech-badge" [title]="tech.name">
+                <i [class]="tech.icon"></i>
+              </span>
+              <span *ngIf="project.technologies.length > 4" class="tech-badge more">
+                +{{ project.technologies.length - 4 }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- État vide -->
+      <div class="empty-state" *ngIf="filteredProjects.length === 0">
+        <i class="fas fa-folder-open"></i>
+        <h3>Aucun projet trouvé</h3>
+        <p>Essayez une autre catégorie</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Projet -->
+  <div class="project-modal" [class.show]="showModal" (click)="closeModal($event)">
+    <div class="modal-container">
+      <div class="modal-content" *ngIf="selectedProject">
+        <button class="modal-close" (click)="closeModal()">
+          <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="modal-header">
+          <img [src]="selectedProject.image" [alt]="selectedProject.title" class="modal-cover">
+          <div class="modal-header-info">
+            <div class="modal-category">{{ selectedProject.category }}</div>
+            <h2 class="modal-title">{{ selectedProject.title }}</h2>
+            <div class="modal-meta">
+              <span class="meta-item">
+                <i class="fas fa-building"></i>
+                {{ selectedProject.client }}
+              </span>
+              <span class="meta-item">
+                <i class="fas fa-calendar-alt"></i>
+                {{ selectedProject.year }}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-body">
+          <!-- Description -->
+          <div class="modal-section">
+            <h3 class="section-title">
+              <i class="fas fa-info-circle"></i>
+              Description
+            </h3>
+            <div class="section-content">
+              <p>{{ selectedProject.fullDescription }}</p>
+            </div>
+          </div>
+
+          <!-- Technologies -->
+          <div class="modal-section">
+            <h3 class="section-title">
+              <i class="fas fa-code"></i>
+              Technologies utilisées
+            </h3>
+            <div class="tech-list">
+              <div *ngFor="let tech of selectedProject.technologies" class="tech-item">
+                <div class="tech-icon" [style.backgroundColor]="tech.color + '20'">
+                  <i [class]="tech.icon" [style.color]="tech.color"></i>
+                </div>
+                <div class="tech-info">
+                  <span class="tech-name">{{ tech.name }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Features -->
+          <div class="modal-section" *ngIf="selectedProject.features?.length">
+            <h3 class="section-title">
+              <i class="fas fa-star"></i>
+              Fonctionnalités principales
+            </h3>
+            <div class="features-grid">
+              <div *ngFor="let feature of selectedProject.features" class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <span>{{ feature }}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Challenges & Solutions -->
+          <div class="modal-row" *ngIf="selectedProject.challenges?.length || selectedProject.solutions?.length">
+            <div class="modal-col" *ngIf="selectedProject.challenges?.length">
+              <h3 class="section-title">
+                <i class="fas fa-exclamation-triangle"></i>
+                Défis relevés
+              </h3>
+              <div class="challenge-list">
+                <div *ngFor="let challenge of selectedProject.challenges" class="challenge-item">
+                  <i class="fas fa-bolt"></i>
+                  <span>{{ challenge }}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-col" *ngIf="selectedProject.solutions?.length">
+              <h3 class="section-title">
+                <i class="fas fa-lightbulb"></i>
+                Solutions apportées
+              </h3>
+              <div class="solution-list">
+                <div *ngFor="let solution of selectedProject.solutions" class="solution-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>{{ solution }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Results -->
+          <div class="modal-section" *ngIf="selectedProject.results?.length">
+            <h3 class="section-title">
+              <i class="fas fa-chart-line"></i>
+              Résultats obtenus
+            </h3>
+            <div class="results-grid">
+              <div *ngFor="let result of selectedProject.results" class="result-card">
+                <i class="fas fa-trophy"></i>
+                <span>{{ result }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer" *ngIf="selectedProject.link">
+          <a [href]="selectedProject.link" target="_blank" class="btn-visit">
+            <i class="fas fa-external-link-alt"></i>
+            Visiter le projet
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

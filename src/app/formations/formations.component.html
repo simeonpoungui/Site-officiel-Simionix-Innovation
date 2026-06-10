@@ -1,0 +1,279 @@
+<!-- ==================== PAGE FORMATIONS ==================== -->
+<div class="formations-page">
+  
+  <!-- Back Button Flottant -->
+  <button class="back-button" (click)="goBack()">
+    <i class="fas fa-arrow-left"></i>
+    <span>Retour</span>
+  </button>
+
+<!-- Hero Section -->
+<section class="formations-hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-graduation-cap"></i>
+        <span>Formations Professionnelles</span>
+      </div>
+      <h1 class="hero-title">
+        Catalogue des
+        <span class="gradient-text">Formations</span>
+      </h1>
+      <p class="hero-description">
+        Des formations complètes, pratiques et certifiantes<br>
+        pour booster votre carrière dans le numérique
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">15+</span>
+          <span class="stat-label">Formations</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">200+</span>
+          <span class="stat-label">Apprenants</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Satisfaction</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-wave">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#F3F5F9" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
+  </div>
+</section>
+
+  <!-- Grille des Formations -->
+  <div class="formations-grid-section">
+    <div class="container">
+      
+      <!-- Filtres -->
+      <div class="filters-wrapper">
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Rechercher une formation..." id="searchInput">
+        </div>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">Toutes</button>
+          <button class="filter-btn" data-filter="informatique">Informatique</button>
+          <button class="filter-btn" data-filter="bureautique">Bureautique</button>
+          <button class="filter-btn" data-filter="design">Design</button>
+          <button class="filter-btn" data-filter="data">Data & IA</button>
+        </div>
+      </div>
+
+      <!-- Cartes Formations -->
+      <div class="formations-grid">
+        
+        <!-- Carte 1 - Initiation Informatique -->
+        <div class="formation-card" data-category="informatique">
+          <div class="card-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <div class="card-badge">Débutant</div>
+          <h3 class="card-title">Initiation Informatique + Internet</h3>
+          <div class="card-meta">
+            <span><i class="far fa-clock"></i> 3 mois</span>
+            <span><i class="fas fa-users"></i> 5-10 pers.</span>
+          </div>
+          <p class="card-description">
+            Maîtrisez les bases de l'informatique, la navigation web et la sécurité en ligne.
+          </p>
+          <div class="card-footer">
+            <div class="card-price">75 000 FCFA</div>
+            <button class="card-btn" (click)="scrollToContact()">S'inscrire</button>
+          </div>
+        </div>
+
+        <!-- Carte 2 - Secrétariat Bureautique -->
+        <div class="formation-card" data-category="bureautique">
+          <div class="card-icon">
+            <i class="fas fa-file-alt"></i>
+          </div>
+          <div class="card-badge">Intermédiaire</div>
+          <h3 class="card-title">Secrétariat Bureautique</h3>
+          <div class="card-meta">
+            <span><i class="far fa-clock"></i> 3 mois</span>
+            <span><i class="fas fa-users"></i> 5-10 pers.</span>
+          </div>
+          <p class="card-description">
+            Word, Excel, PowerPoint - La suite bureautique complète pour une productivité optimale.
+          </p>
+          <div class="card-footer">
+            <div class="card-price">100 000 FCFA</div>
+            <button class="card-btn" (click)="scrollToContact()">S'inscrire</button>
+          </div>
+        </div>
+
+        <!-- Carte 3 - Développement Web Fullstack -->
+        <div class="formation-card" data-category="informatique">
+          <div class="card-icon">
+            <i class="fab fa-angular"></i>
+          </div>
+          <div class="card-badge">Avancé</div>
+          <h3 class="card-title">Développement Web Fullstack</h3>
+          <div class="card-meta">
+            <span><i class="far fa-clock"></i> 6 mois</span>
+            <span><i class="fas fa-users"></i> 5-8 pers.</span>
+          </div>
+          <p class="card-description">
+            Angular, React, Node.js, Laravel - Devenez développeur web complet.
+          </p>
+          <div class="card-footer">
+            <div class="card-price">300 000 FCFA</div>
+            <button class="card-btn" (click)="scrollToContact()">S'inscrire</button>
+          </div>
+        </div>
+
+        <!-- Carte 4 - Développement Mobile -->
+        <div class="formation-card" data-category="informatique">
+          <div class="card-icon">
+            <i class="fab fa-android"></i>
+          </div>
+          <div class="card-badge">Avancé</div>
+          <h3 class="card-title">Développement Mobile</h3>
+          <div class="card-meta">
+            <span><i class="far fa-clock"></i> 3 mois</span>
+            <span><i class="fas fa-users"></i> 5-8 pers.</span>
+          </div>
+          <p class="card-description">
+            Créez des applications iOS et Android avec React Native ou Flutter.
+          </p>
+          <div class="card-footer">
+            <div class="card-price">150 000 FCFA</div>
+            <button class="card-btn" (click)="scrollToContact()">S'inscrire</button>
+          </div>
+        </div>
+
+        <!-- Carte 5 - Programmation -->
+        <div class="formation-card" data-category="informatique">
+          <div class="card-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="card-badge">Débutant</div>
+          <h3 class="card-title">Programmation</h3>
+          <div class="card-meta">
+            <span><i class="far fa-clock"></i> 6 mois</span>
+            <span><i class="fas fa-users"></i> 5-10 pers.</span>
+          </div>
+          <p class="card-description">
+            Algorithmique, Python, POO - Les fondamentaux de la programmation.
+          </p>
+          <div class="card-footer">
+            <div class="card-price">350 000 FCFA</div>
+            <button class="card-btn" (click)="scrollToContact()">S'inscrire</button>
+          </div>
+        </div>
+
+        <!-- Carte 6 - Bases de Données -->
+        <div class="formation-card" data-category="data">
+          <div class="card-icon">
+            <i class="fas fa-database"></i>
+          </div>
+          <div class="card-badge">Intermédiaire</div>
+          <h3 class="card-title">Bases de Données</h3>
+          <div class="card-meta">
+            <span><i class="far fa-clock"></i> 3 mois</span>
+            <span><i class="fas fa-users"></i> 5-10 pers.</span>
+          </div>
+          <p class="card-description">
+            SQL, MySQL, MongoDB - Conception et administration de BDD.
+          </p>
+          <div class="card-footer">
+            <div class="card-price">200 000 FCFA</div>
+            <button class="card-btn" (click)="scrollToContact()">S'inscrire</button>
+          </div>
+        </div>
+
+        <!-- Carte 7 - Intelligence Artificielle -->
+        <div class="formation-card" data-category="data">
+          <div class="card-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="card-badge">Avancé</div>
+          <h3 class="card-title">Intelligence Artificielle</h3>
+          <div class="card-meta">
+            <span><i class="far fa-clock"></i> 3 mois</span>
+            <span><i class="fas fa-users"></i> 5-8 pers.</span>
+          </div>
+          <p class="card-description">
+            Machine Learning, Deep Learning, Python - Créez des modèles IA.
+          </p>
+          <div class="card-footer">
+            <div class="card-price">150 000 FCFA</div>
+            <button class="card-btn" (click)="scrollToContact()">S'inscrire</button>
+          </div>
+        </div>
+
+        <!-- Carte 8 - Design Graphique -->
+        <div class="formation-card" data-category="design">
+          <div class="card-icon">
+            <i class="fas fa-paintbrush"></i>
+          </div>
+          <div class="card-badge">Débutant</div>
+          <h3 class="card-title">Design Graphique UI/UX</h3>
+          <div class="card-meta">
+            <span><i class="far fa-clock"></i> 6 mois</span>
+            <span><i class="fas fa-users"></i> 5-10 pers.</span>
+          </div>
+          <p class="card-description">
+            Photoshop, Illustrator, Figma - Créez des interfaces modernes.
+          </p>
+          <div class="card-footer">
+            <div class="card-price">200 000 FCFA</div>
+            <button class="card-btn" (click)="scrollToContact()">S'inscrire</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Options de formation -->
+  <section class="options-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Modalités</span>
+        <h2 class="section-title">Comment <span class="gradient-text">suivre</span> nos formations ?</h2>
+        <div class="title-bar"></div>
+      </div>
+      <div class="options-grid">
+        <div class="option-card">
+          <div class="option-icon">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3>Présentiel</h3>
+          <p>📍 Brazzaville</p>
+          <p>🕐 Horaires flexibles (matin, après-midi, soir, week-end)</p>
+          <p>👥 Groupes de 5 à 10 personnes maximum</p>
+        </div>
+        <div class="option-card">
+          <div class="option-icon">
+            <i class="fas fa-laptop-house"></i>
+          </div>
+          <h3>À Distance</h3>
+          <p>💻 Cours en ligne en direct (Zoom/Google Meet)</p>
+          <p>📚 Support de cours et exercices fournis</p>
+          <p>🎯 Suivi personnalisé et accompagnement</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-wrapper">
+        <h2>Prêt à <span class="gradient-text">démarrer</span> votre formation ?</h2>
+        <p>Inscrivez-vous maintenant et bénéficiez d'une attestation offerte à la fin de chaque module.</p>
+        <button class="cta-btn" (click)="scrollToContact()">
+          <i class="fas fa-pen-alt"></i> S'inscrire maintenant
+        </button>
+      </div>
+    </div>
+  </section>
+
+</div>

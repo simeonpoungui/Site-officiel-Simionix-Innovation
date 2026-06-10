@@ -1,0 +1,659 @@
+<!-- ==================== NAVBAR ==================== -->
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="container">
+   <div class="navbar-brand" (click)="scrollToSection('home')">
+  <img src="assets/logo_horizontal_simionix.png" 
+       alt="Simionix Innovation" 
+       class="full-logo-image">
+</div>
+
+    <div class="navbar-menu" [class.active]="menuActive">
+      <ul class="nav-links">
+        <li *ngFor="let item of navItems">
+          <a (click)="scrollToSection(item.id)" [class.active]="activeSection === item.id">
+            {{ item.name }}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <button class="btn-nav-cta" (click)="scrollToSection('contact')">
+      Devis Gratuit <i class="fas fa-paper-plane"></i>
+    </button>
+
+    <div class="menu-toggle" (click)="toggleMenu()">
+      <i [class.fa-bars]="!menuActive" [class.fa-times]="menuActive" class="fas"></i>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== HERO SECTION ==================== -->
+<section id="home" class="hero-section">
+  <div class="hero-bg-tech">
+    <div class="tech-overlay"></div>
+    <div class="grid-pattern"></div>
+    <div class="circuit-pattern"></div>
+  </div>
+  
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-glow">
+            <i class="fas fa-rocket"></i> Innovation & Excellence
+          </span>
+        </div>
+        <h1 class="hero-title">
+          Solutions Digitales<br>
+          <span class="gradient-text">Sur Mesure</span><br>
+          Pour Votre Croissance
+        </h1>
+        <p class="hero-subtitle">
+          Simionix Innovation vous accompagne dans votre transformation numérique
+          avec des solutions technologiques innovantes, du développement web sur mesure
+          à la formation aux métiers du digital.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn-primary-glow" (click)="scrollToSection('contact')">
+            Commencer <i class="fas fa-arrow-right"></i>
+          </button>
+          <button class="btn-outline-white" (click)="scrollToSection('services')">
+            Découvrir <i class="fas fa-play-circle"></i>
+          </button>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-item"><i class="fas fa-check-circle"></i> 13+ Projets livrés</div>
+          <div class="trust-item"><i class="fas fa-check-circle"></i> 10+ Étudiants formés</div>
+          <div class="trust-item"><i class="fas fa-check-circle"></i> 9+ Clients satisfaits</div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card-3d">
+          <div class="code-animation">
+            <div class="code-line">$ npm run innovate</div>
+            <div class="code-line">🚀 Building your digital future...</div>
+            <div class="code-line">✓ Frontend: Angular/React</div>
+            <div class="code-line">✓ Backend: Node.js/Laravel</div>
+            <div class="code-line">✓ Database: PostgreSQL/MongoDB</div>
+            <div class="code-line">✓ Cloud: AWS/Azure</div>
+            <div class="code-line gradient-text">✨ Deployment successful! ✨</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="scroll-indicator">
+    <span>Défiler</span>
+    <i class="fas fa-chevron-down"></i>
+  </div>
+</section>
+
+<!-- ==================== SECTION À PROPOS ==================== -->
+<section id="about" class="about-section scroll-animate fade-left">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="about-badge"><i class="fas fa-building"></i> À propos</span>
+<h2>Une expertise technologique<br><span class="text-primary">100% orientée client</span></h2>        <p class="about-intro">Simionix Innovation accompagne les entreprises et institutions dans leur transformation numérique avec des solutions digitales sur mesure, sécurisées et adaptées au contexte local.</p>
+        
+        <div class="about-block">
+          <div class="about-block-icon"><i class="fas fa-bullseye"></i></div>
+          <div class="about-block-content">
+            <h4>Notre mission</h4>
+            <p>Proposer des technologies innovantes et accessibles pour accélérer la croissance digitale de nos partenaires.</p>
+          </div>
+        </div>
+        
+        <div class="about-block">
+          <div class="about-block-icon"><i class="fas fa-heart"></i></div>
+          <div class="about-block-content">
+            <h4>Nos valeurs</h4>
+            <p>Innovation, fiabilité, transparence et impact local.</p>
+          </div>
+        </div>
+        
+        <div class="about-block">
+          <div class="about-block-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="about-block-content">
+            <h4>Ancrage local</h4>
+            <p>Basée à Brazzaville, nous comprenons parfaitement les enjeux et opportunités du marché congolais.</p>
+          </div>
+        </div>
+        
+        <button class="btn-about" (click)="scrollToSection('contact')">
+          Discuter de votre projet <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+      
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=1920&q=80" alt="Équipe Simionix Innovation">
+        <div class="about-stats">
+          <div><span>13+</span><p>Projets livrés</p></div>
+          <div><span>10+</span><p>Apprenants formés</p></div>
+          <div><span>80%</span><p>Satisfaction</p></div>
+        </div>
+        <div class="about-quote">
+          <i class="fas fa-quote-left"></i>
+          <p>« Une équipe compétente et à l’écoute. Vrai partenaire tech. »</p>
+          <span>— Sabine K., Directrice</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SERVICES SECTION ==================== -->
+<section id="services" class="services-section scroll-animate fade-up">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Nos Expertises</span>
+      <h2 class="section-title">Services & <span class="gradient-text">Spécialités</span></h2>
+      <div class="title-bar"></div>
+      <p class="section-subtitle">Des solutions complètes pour votre transformation numérique</p>
+    </div>
+    <div class="services-grid">
+      <div *ngFor="let service of services" class="service-card">
+        <div class="service-icon-wrapper"><i class="fas {{ service.icon }}"></i></div>
+        <h3 class="service-title">{{ service.title }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+        <div class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WHY US SECTION ==================== -->
+<section id="why-us" class="whyus-section scroll-animate fade-right">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Pourquoi Nous Choisir</span>
+      <h2 class="section-title">Notre <span class="gradient-text">Valeur Ajoutée</span></h2>
+      <div class="title-bar"></div>
+      <p class="section-subtitle">Ce qui fait notre différence et notre excellence</p>
+    </div>
+    <div class="whyus-grid">
+      <div *ngFor="let item of whyChooseUs" class="whyus-card">
+        <div class="whyus-icon"><i class="fas {{ item.icon }}"></i></div>
+        <h3 class="whyus-title">{{ item.title }}</h3>
+        <p class="whyus-description">{{ item.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECTION ÉQUIPE ==================== -->
+<section id="team" class="team-section scroll-animate fade-up">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">
+        <i class="fas fa-users"></i> Notre équipe
+      </span>
+      <h2 class="section-title">
+        Une équipe <span class="gradient-text">passionnée</span>
+      </h2>
+      <div class="title-bar"></div>
+      <p class="section-subtitle">
+        Des experts dévoués à la réussite de vos projets numériques
+      </p>
+    </div>
+
+    <div class="team-grid">
+   <!-- Membre 1 - Fondateur / DG -->
+<div class="team-card">
+  <!-- <div class="team-image">
+    <img src="assets/simeon.png" alt="Siméon Poungui - Directeur Général">
+  </div> -->
+  <div class="team-info">
+    <h3 class="team-name">Siméon Poungui</h3>
+    <p class="team-position">Directeur Général</p>
+    <p class="team-description">
+      Expert full-stack avec plus de 8 ans d'expérience. Passionné par l'innovation 
+      technologique et la création de solutions digitales à fort impact.
+    </p>
+    <div class="team-social">
+      <a href="https://www.linkedin.com/in/simeon-poungui" target="_blank" class="social-link" title="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://github.com/simeonpoungui" target="_blank" class="social-link" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://twitter.com/simeonpoungui" target="_blank" class="social-link" title="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="mailto:simeon@simionix.com" class="social-link" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+      <!-- Membre 2 - Lead Développeur -->
+      <div class="team-card">
+        <!-- <div class="team-image">
+          <img src="assets/team/lead-dev.jpg" alt="Grace Nkounkou">
+        </div> -->
+        <div class="team-info">
+          <h3 class="team-name">Grace Nkounkou</h3>
+          <p class="team-position">Lead Développeuse Fullstack</p>
+          <p class="team-description">
+            Spécialiste Angular et Node.js. Architecte de solutions robustes et évolutives, 
+            elle garantit la qualité technique de nos réalisations.
+          </p>
+          <div class="team-social">
+            <a href="#" target="_blank" class="social-link" title="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" target="_blank" class="social-link" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#" target="_blank" class="social-link" title="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link" title="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Membre 3 - Designer & UX -->
+      <div class="team-card">
+        <!-- <div class="team-image">
+          <img src="assets/team/designer.jpg" alt="Marie Loufoua">
+        </div> -->
+        <div class="team-info">
+          <h3 class="team-name">Marie Loufoua</h3>
+          <p class="team-position">Lead Designer UX/UI</p>
+          <p class="team-description">
+            Créative et intuitive, elle transforme vos idées en interfaces modernes 
+            et expériences utilisateur mémorables.
+          </p>
+          <div class="team-social">
+            <a href="#" target="_blank" class="social-link" title="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" target="_blank" class="social-link" title="Behance">
+              <i class="fab fa-behance"></i>
+            </a>
+            <a href="#" target="_blank" class="social-link" title="Dribbble">
+              <i class="fab fa-dribbble"></i>
+            </a>
+            <a href="#" class="social-link" title="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <button class="btn-team" (click)="scrollToSection('contact')">
+        <i class="fas fa-handshake"></i>
+        Travailler avec nous
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PROJECTS SECTION ==================== -->
+<section id="projects" class="projects-section scroll-animate fade-up">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Notre portfolio</span>
+      <h2 class="section-title">Nos <span class="gradient-text">Réalisations</span></h2>
+      <div class="title-bar"></div>
+      <p class="section-subtitle">Une sélection de projets innovants qui démontrent notre expertise technique</p>
+    </div>
+    <div class="projects-grid">
+      <div *ngFor="let project of projects" class="project-card" (click)="openProject(project.id)">
+        <div class="project-image" [style.backgroundImage]="'url(' + project.image + ')'" [style.backgroundSize]="'cover'" [style.backgroundPosition]="'center'">
+          <div class="project-overlay">
+            <div class="project-icon"><i class="fas {{ project.icon }}"></i></div>
+            <span class="project-category">{{ project.category }}</span>
+            <button class="btn-project-view">Détails <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-desc">{{ project.category }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <a routerLink="/projects" class="btn-view-all">Voir tous les projets <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PROCESS SECTION ==================== -->
+<section class="process-section scroll-animate fade-left">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Notre Méthodologie</span>
+      <h2 class="section-title">Notre <span class="gradient-text">Processus</span> de Travail</h2>
+      <div class="title-bar"></div>
+      <p class="section-subtitle">Une approche structurée pour des résultats exceptionnels</p>
+    </div>
+    <div class="process-grid">
+      <div *ngFor="let step of processSteps" class="process-card">
+        <div class="process-number">{{ step.step }}</div>
+        <div class="process-icon"><i class="fas {{ step.icon }}"></i></div>
+        <h3 class="process-title">{{ step.title }}</h3>
+        <p class="process-description">{{ step.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TRAININGS SECTION ==================== -->
+<section id="formations" class="training-section scroll-animate fade-right">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Formations & Certifications</span>
+      <h2 class="section-title">Formations <span class="gradient-text">Professionnelles</span></h2>
+      <div class="title-bar"></div>
+      <p class="section-subtitle">Des formations complètes et pratiques pour maîtriser les technologies modernes</p>
+    </div>
+    <div class="training-grid">
+      <div *ngFor="let training of trainingsList" class="training-card" (click)="openTraining(training.id)">
+        <div class="training-icon"><i class="fas {{ training.icon }}"></i></div>
+        <h3 class="training-title">{{ training.title }}</h3>
+        <div class="training-meta">
+          <span><i class="far fa-clock"></i> {{ training.duration }}</span>
+        </div>
+        <button class="btn-training">En savoir plus <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <a routerLink="/formations" class="btn-view-all">Voir toutes les formations <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== STATISTICS SECTION ==================== -->
+<section class="statistics-section">
+  <div class="container">
+    <div class="statistics-grid">
+      <div *ngFor="let stat of statistics" class="stat-card">
+        <div class="stat-number">{{ stat.number }}{{ stat.suffix }}</div>
+        <div class="stat-label">{{ stat.label }}</div>
+        <div class="stat-bar"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TESTIMONIALS SECTION ==================== -->
+<section class="testimonials-section scroll-animate scale-in">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Témoignages</span>
+      <h2 class="section-title">Ce que disent nos <span class="gradient-text">Clients</span></h2>
+      <div class="title-bar"></div>
+      <p class="section-subtitle">Ils nous ont fait confiance et témoignent</p>
+    </div>
+    <div class="testimonials-grid">
+      <div *ngFor="let testimonial of testimonials" class="testimonial-card">
+        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+        <p class="testimonial-content">{{ testimonial.content }}</p>
+        <div class="testimonial-rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">{{ testimonial.name.charAt(0) }}</div>
+          <div class="author-info">
+            <h4>{{ testimonial.name }}</h4>
+            <p>{{ testimonial.position }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PARTNERS SECTION ==================== -->
+<section class="partners-section scroll-animate fade-up">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Ils nous font confiance</span>
+    </div>
+    <div class="partner-logos">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/UNESCO_logo.svg/2560px-UNESCO_logo.svg.png" alt="242 Santé">
+      <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/1/18/Logo_MTN_2019.svg/1200px-Logo_MTN_2019.svg.png" alt="Komnayo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png" alt="CyberTech">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" alt="UNESCO">
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TECHNOLOGIES SECTION ==================== -->
+<section class="technologies-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Notre stack</span>
+      <h2 class="section-title">Nos technologies <span class="gradient-text">clés</span></h2>
+      <div class="title-bar"></div>
+      <p class="section-subtitle">Un écosystème technologique moderne pour des solutions performantes</p>
+    </div>
+    <div class="tech-marquee">
+      <div class="tech-track">
+        <div *ngFor="let tech of technologies" class="tech-item">
+          <i class="{{ tech.icon }}"></i>
+          <span>{{ tech.name }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CTA SECTION ==================== -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-wrapper">
+      <h2 class="cta-title">Prêt à <span class="gradient-text">innover</span> avec nous ?</h2>
+      <p class="cta-text">Que vous ayez un projet de développement, besoin d'une formation ou d'équipements, notre équipe est là pour vous accompagner. Réponse sous 24h.</p>
+      <div class="cta-buttons">
+        <button class="btn-cta-primary" (click)="scrollToSection('contact')">Prendre rendez-vous <i class="fas fa-calendar-check"></i></button>
+        <button class="btn-cta-secondary" (click)="scrollToSection('services')"><i class="fas fa-building"></i> Découvrir nos services</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONTACT SECTION ==================== -->
+<section id="contact" class="contact-section scroll-animate fade-up">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Restons en contact</span>
+      <h2 class="section-title">Contactez-<span class="gradient-text">nous</span></h2>
+      <div class="title-bar"></div>
+      <p class="section-subtitle">Une question ? Un projet ? Contactez-nous et nous vous répondrons dans les plus brefs délais.</p>
+    </div>
+    
+    <!-- Messages de notification -->
+    <div *ngIf="sendSuccess" class="alert alert-success">
+      <i class="fas fa-check-circle"></i>
+      {{ successMessage }}
+    </div>
+    <div *ngIf="sendError" class="alert alert-error">
+      <i class="fas fa-exclamation-circle"></i>
+      {{ errorMessage }}
+    </div>
+    
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <div class="contact-header">
+          <i class="fas fa-address-card"></i>
+          <h3>Coordonnées</h3>
+          <p>N'hésitez pas à nous contacter</p>
+        </div>
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <div><h4>Téléphone / WhatsApp</h4><p>+242 06 705 00 56</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div><h4>Email professionnel</h4><p>contactsimionix&#64;gmail.com</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div><h4>Adresse</h4><p>Brazzaville, République du Congo</p></div>
+          </div>
+        </div>
+        <div class="contact-social">
+          <a href="https://www.facebook.com/profile.php?id=61587135123948" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Aorganization%3A122214190&keywords=Simionix%20Innovation&origin=ENTITY_SEARCH_HOME_HISTORY&sid=Yda" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      
+      <div class="contact-form-wrapper">
+        <form #contactForm="ngForm" (ngSubmit)="sendMessage(contactForm)" class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <input 
+                type="text" 
+                name="nom"
+                [(ngModel)]="contactData.nom"
+                #nom="ngModel"
+                required
+                minlength="2"
+                class="form-control" 
+                placeholder="Votre nom complet">
+              <div *ngIf="nom.invalid && nom.touched" class="error-message">
+                <span *ngIf="nom.errors?.['required']">Le nom est requis</span>
+                <span *ngIf="nom.errors?.['minlength']">Le nom doit contenir au moins 2 caractères</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <input 
+                type="email" 
+                name="email"
+                [(ngModel)]="contactData.email"
+                #email="ngModel"
+                required
+                email
+                class="form-control" 
+                placeholder="Votre adresse email">
+              <div *ngIf="email.invalid && email.touched" class="error-message">
+                <span *ngIf="email.errors?.['required']">L'email est requis</span>
+                <span *ngIf="email.errors?.['email']">Veuillez entrer un email valide</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <input 
+              type="text" 
+              name="sujet"
+              [(ngModel)]="contactData.sujet"
+              #sujet="ngModel"
+              required
+              minlength="3"
+              class="form-control" 
+              placeholder="Sujet de votre message">
+            <div *ngIf="sujet.invalid && sujet.touched" class="error-message">
+              <span *ngIf="sujet.errors?.['required']">Le sujet est requis</span>
+              <span *ngIf="sujet.errors?.['minlength']">Le sujet doit contenir au moins 3 caractères</span>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <textarea 
+              rows="5" 
+              name="message"
+              [(ngModel)]="contactData.message"
+              #message="ngModel"
+              required
+              minlength="10"
+              class="form-control" 
+              placeholder="Décrivez votre projet ou votre demande..."></textarea>
+            <div *ngIf="message.invalid && message.touched" class="error-message">
+              <span *ngIf="message.errors?.['required']">Le message est requis</span>
+              <span *ngIf="message.errors?.['minlength']">Le message doit contenir au moins 10 caractères</span>
+            </div>
+          </div>
+          
+          <button 
+            type="submit" 
+            class="btn-submit" 
+            [disabled]="isSending || contactForm.invalid">
+            <i *ngIf="!isSending" class="fas fa-paper-plane"></i>
+            <i *ngIf="isSending" class="fas fa-spinner fa-spin"></i>
+            <span>{{ isSending ? 'Envoi en cours...' : 'Envoyer le message' }}</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+    <div class="footer-logo">
+  <img src="assets/logo_horizontal_simionix.png" 
+       alt="Simionix Innovation" 
+       class="footer-logo-image">
+</div>
+        <p>Des solutions digitales innovantes pour accélérer votre croissance.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/profile.php?id=61587135123948"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Aorganization%3A122214190&keywords=Simionix%20Innovation&origin=ENTITY_SEARCH_HOME_HISTORY&sid=Yda"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Liens rapides</h4>
+        <ul>
+          <li><a (click)="scrollToSection('home')">Accueil</a></li>
+          <li><a (click)="scrollToSection('services')">Services</a></li>
+          <li><a (click)="scrollToSection('projects')">Réalisations</a></li>
+          <li><a (click)="scrollToSection('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li>Développement Web</li>
+          <li>Applications Mobiles</li>
+          <li>Formation Numérique</li>
+          <li>Conseil IT</li>
+        </ul>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Newsletter</h4>
+        <p>Recevez nos actualités et offres spéciales</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Votre email">
+          <button><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2022 Simionix Innovation. Tous droits réservés.</p>
+      <div class="footer-legal">
+        <a>Mentions légales</a>
+        <a>Politique de confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== FLOATING ELEMENTS ==================== -->
+<div class="whatsapp-float">
+  <a href="https://wa.me/242067445795?text=Bonjour%20Simionix%20Innovation" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+<div class="trust-badge">
+  <i class="fas fa-shield-alt"></i>
+  <span>Entreprise certifiée · Réponse &lt; 24h</span>
+</div>
