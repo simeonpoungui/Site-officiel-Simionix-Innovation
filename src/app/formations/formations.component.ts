@@ -1,7 +1,8 @@
 // src/app/pages/formations/formations.component.ts
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formations',
@@ -10,26 +11,30 @@ import { Location } from '@angular/common';
   templateUrl: './formations.component.html',
   styleUrls: ['./formations.component.scss']
 })
-export class FormationsComponent {
+export class FormationsComponent implements OnInit {
   
-  constructor(private location: Location) {}
+  constructor(
+    private location: Location,
+    private router: Router
+  ) {}
 
-   ngOnInit() {
-    // Initialisation des filtres
-    this.initFilters();
+  ngOnInit() {
+    // Forcer le scroll en haut de la page
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    
+    // Initialisation des filtres après le rendu
+    setTimeout(() => {
+      this.initFilters();
+      this.initSearchFilter();
+    }, 100);
   }
 
-  ngAfterViewInit() {
-    this.initSearchFilter();
-  }
-
-    private initFilters() {
+  private initFilters() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.formation-card');
 
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        // Update active state
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
@@ -68,23 +73,24 @@ export class FormationsComponent {
     }
   }
   
-  // Méthode pour revenir à la page précédente
   goBack() {
     this.location.back();
+    setTimeout(() => window.scrollTo(0, 0), 50);
   }
 
-  // Méthode pour scroller jusqu'à la section contact
   scrollToContact() {
-    // Vérifier si on est sur la page d'accueil
     const contactSection = document.getElementById('contact');
     if (contactSection) {
-      contactSection.scrollIntoView({ 
-        behavior: 'smooth', 
-        block: 'start' 
-      });
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } else {
-      // Si on n'est pas sur la page d'accueil, rediriger vers la page d'accueil puis scroller
-      window.location.href = '/#contact';
+      this.router.navigate(['/']).then(() => {
+        setTimeout(() => {
+          const contact = document.getElementById('contact');
+          if (contact) {
+            contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 500);
+      });
     }
   }
 }

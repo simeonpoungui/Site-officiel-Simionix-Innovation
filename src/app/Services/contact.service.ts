@@ -7,25 +7,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ContactService {
-  private baseUrl = 'https://backpos.brandsmillenium.com';
+  private baseUrl = 'http://127.0.0.1:8000';
 
   constructor(private http: HttpClient) { }
 
-  // Créer une vue (incrémenter le compteur)
-  createVues(): Observable<any> {
-    const url = `${this.baseUrl}/v1/spdev/create-vues`;
-    return this.http.post(url, {});
-  }
-
-  // Lire les statistiques
-  readVues(): Observable<any> {
-    const url = `${this.baseUrl}/v1/spdev/read-vues`;
-    return this.http.post(url, {});
-  }
-
   // Envoyer un message
   sendMessage(data: any): Observable<any> {
-    const url = `${this.baseUrl}/v1/spdev/message`;
+    const url = `${this.baseUrl}/api/messages/send/simionix`;
     return this.http.post(url, data);
   }
 }

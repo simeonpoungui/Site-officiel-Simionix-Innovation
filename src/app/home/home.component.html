@@ -1,11 +1,11 @@
 <!-- ==================== NAVBAR ==================== -->
 <nav class="navbar" [class.scrolled]="isScrolled">
   <div class="container">
-   <div class="navbar-brand" (click)="scrollToSection('home')">
-  <img src="assets/logo_horizontal_simionix.png" 
-       alt="Simionix Innovation" 
-       class="full-logo-image">
-</div>
+    <div class="navbar-brand" (click)="scrollToSection('home')">
+      <img src="assets/logo_horizontal.png" 
+           alt="Simionix Innovation" 
+           class="full-logo-image">
+    </div>
 
     <div class="navbar-menu" [class.active]="menuActive">
       <ul class="nav-links">
@@ -40,7 +40,7 @@
       <div class="hero-content">
         <div class="hero-badge">
           <span class="badge-glow">
-            <i class="fas fa-rocket"></i> Innovation & Excellence
+            <i class="fas fa-rocket"></i> Innover • Former • Transformer le futur
           </span>
         </div>
         <h1 class="hero-title">
@@ -49,22 +49,22 @@
           Pour Votre Croissance
         </h1>
         <p class="hero-subtitle">
-          Simionix Innovation vous accompagne dans votre transformation numérique
-          avec des solutions technologiques innovantes, du développement web sur mesure
-          à la formation aux métiers du digital.
+          SIMIONIX INNOVATION est une entreprise spécialisée dans les technologies numériques, 
+          la transformation digitale, la communication, la formation professionnelle et 
+          l'accompagnement des organisations.
         </p>
         <div class="hero-buttons">
           <button class="btn-primary-glow" (click)="scrollToSection('contact')">
             Commencer <i class="fas fa-arrow-right"></i>
           </button>
-          <button class="btn-outline-white" (click)="scrollToSection('services')">
-            Découvrir <i class="fas fa-play-circle"></i>
+          <button class="btn-outline-white" (click)="scrollToSection('poles')">
+            Nos Pôles <i class="fas fa-play-circle"></i>
           </button>
         </div>
         <div class="hero-trust">
           <div class="trust-item"><i class="fas fa-check-circle"></i> 13+ Projets livrés</div>
           <div class="trust-item"><i class="fas fa-check-circle"></i> 10+ Étudiants formés</div>
-          <div class="trust-item"><i class="fas fa-check-circle"></i> 9+ Clients satisfaits</div>
+          <div class="trust-item"><i class="fas fa-check-circle"></i> 10+ Clients satisfaits</div>
         </div>
       </div>
       <div class="hero-visual">
@@ -95,21 +95,31 @@
     <div class="about-grid">
       <div class="about-text">
         <span class="about-badge"><i class="fas fa-building"></i> À propos</span>
-<h2>Une expertise technologique<br><span class="text-primary">100% orientée client</span></h2>        <p class="about-intro">Simionix Innovation accompagne les entreprises et institutions dans leur transformation numérique avec des solutions digitales sur mesure, sécurisées et adaptées au contexte local.</p>
+        <h2>Une expertise technologique<br><span class="text-primary">100% orientée client</span></h2>
+        <p class="about-intro">
+          SIMIONIX INNOVATION est une entreprise spécialisée dans les technologies numériques, 
+          la transformation digitale, la communication, la formation professionnelle et 
+          l'accompagnement des organisations.
+        </p>
+        <p class="about-intro">
+          Nous concevons des solutions innovantes qui permettent aux entreprises, établissements 
+          scolaires, institutions et particuliers d'améliorer leur productivité, de digitaliser 
+          leurs activités et d'accélérer leur croissance.
+        </p>
         
         <div class="about-block">
           <div class="about-block-icon"><i class="fas fa-bullseye"></i></div>
           <div class="about-block-content">
             <h4>Notre mission</h4>
-            <p>Proposer des technologies innovantes et accessibles pour accélérer la croissance digitale de nos partenaires.</p>
+            <p>Concevoir, développer et déployer des solutions innovantes qui facilitent le travail, améliorent la gestion, développent les compétences et créent de la valeur durable pour nos clients et partenaires.</p>
           </div>
         </div>
         
         <div class="about-block">
-          <div class="about-block-icon"><i class="fas fa-heart"></i></div>
+          <div class="about-block-icon"><i class="fas fa-eye"></i></div>
           <div class="about-block-content">
-            <h4>Nos valeurs</h4>
-            <p>Innovation, fiabilité, transparence et impact local.</p>
+            <h4>Notre vision</h4>
+            <p>Être une référence africaine dans la conception de solutions numériques, la formation professionnelle et l'accompagnement des organisations, en contribuant activement au développement économique et à la transformation digitale du continent.</p>
           </div>
         </div>
         
@@ -135,7 +145,7 @@
         </div>
         <div class="about-quote">
           <i class="fas fa-quote-left"></i>
-          <p>« Une équipe compétente et à l’écoute. Vrai partenaire tech. »</p>
+          <p>« Une équipe compétente et à l'écoute. Vrai partenaire tech. »</p>
           <span>— Sabine K., Directrice</span>
         </div>
       </div>
@@ -143,35 +153,66 @@
   </div>
 </section>
 
-<!-- ==================== SERVICES SECTION ==================== -->
-<section id="services" class="services-section scroll-animate fade-up">
+<!-- ==================== VALEURS SECTION ==================== -->
+<section class="values-section scroll-animate fade-up">
   <div class="container">
     <div class="section-header">
-      <span class="section-badge">Nos Expertises</span>
-      <h2 class="section-title">Services & <span class="gradient-text">Spécialités</span></h2>
+      <span class="section-badge">Nos Valeurs</span>
+      <h2 class="section-title">Des valeurs qui <span class="gradient-text">nous animent</span></h2>
       <div class="title-bar"></div>
-      <p class="section-subtitle">Des solutions complètes pour votre transformation numérique</p>
+      <p class="section-subtitle">8 principes fondamentaux qui guident notre action au quotidien</p>
     </div>
-    <div class="services-grid">
-      <div *ngFor="let service of services" class="service-card">
-        <div class="service-icon-wrapper"><i class="fas {{ service.icon }}"></i></div>
-        <h3 class="service-title">{{ service.title }}</h3>
-        <p class="service-description">{{ service.description }}</p>
-        <div class="service-link">En savoir plus <i class="fas fa-arrow-right"></i></div>
+    <div class="values-grid">
+      <div *ngFor="let value of values" class="value-card">
+        <div class="value-icon"><i class="fas {{ value.icon }}"></i></div>
+        <h3 class="value-title">{{ value.title }}</h3>
+        <p class="value-description">{{ value.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PÔLES D'EXPERTISE ==================== -->
+<section id="poles" class="poles-section scroll-animate fade-up">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Nos Pôles d'Expertise</span>
+      <h2 class="section-title">6 Pôles pour <span class="gradient-text">Votre Réussite</span></h2>
+      <div class="title-bar"></div>
+      <p class="section-subtitle">SIMIONIX INNOVATION c'est 6 pôles d'expertise complémentaires pour répondre à tous vos besoins</p>
+    </div>
+
+    <div class="poles-grid">
+      <div *ngFor="let pole of expertisePoles" class="pole-card">
+        <div class="pole-header">
+          <div class="pole-icon"><i class="fas {{ pole.icon }}"></i></div>
+          <div class="pole-title-wrapper">
+            <h3 class="pole-title">{{ pole.title }}</h3>
+            <p class="pole-subtitle">{{ pole.subtitle }}</p>
+          </div>
+        </div>
+        <div class="pole-content">
+          <p class="pole-description">{{ pole.description }}</p>
+          <div class="pole-services">
+            <span *ngFor="let service of pole.services" class="service-tag">
+              <i class="fas fa-check-circle"></i> {{ service }}
+            </span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ==================== WHY US SECTION ==================== -->
-<section id="why-us" class="whyus-section scroll-animate fade-right">
+<section class="whyus-section scroll-animate fade-right">
   <div class="container">
-    <div class="section-header">
-      <span class="section-badge">Pourquoi Nous Choisir</span>
-      <h2 class="section-title">Notre <span class="gradient-text">Valeur Ajoutée</span></h2>
-      <div class="title-bar"></div>
-      <p class="section-subtitle">Ce qui fait notre différence et notre excellence</p>
-    </div>
+<div class="section-header">
+  <span class="section-badge">Nos Atouts</span>
+  <h2 class="section-title">Pourquoi <span class="gradient-text">SIMIONIX</span></h2>
+  <div class="title-bar"></div>
+  <p class="section-subtitle">Une expertise pluridisciplinaire au service de votre réussite</p>
+</div>
     <div class="whyus-grid">
       <div *ngFor="let item of whyChooseUs" class="whyus-card">
         <div class="whyus-icon"><i class="fas {{ item.icon }}"></i></div>
@@ -194,47 +235,39 @@
       </h2>
       <div class="title-bar"></div>
       <p class="section-subtitle">
-        Des experts dévoués à la réussite de vos projets numériques
+        Des experts pluridisciplinaires dévoués à la réussite de vos projets
       </p>
     </div>
 
     <div class="team-grid">
-   <!-- Membre 1 - Fondateur / DG -->
-<div class="team-card">
-  <!-- <div class="team-image">
-    <img src="assets/simeon.png" alt="Siméon Poungui - Directeur Général">
-  </div> -->
-  <div class="team-info">
-    <h3 class="team-name">Siméon Poungui</h3>
-    <p class="team-position">Directeur Général</p>
-    <p class="team-description">
-      Expert full-stack avec plus de 8 ans d'expérience. Passionné par l'innovation 
-      technologique et la création de solutions digitales à fort impact.
-    </p>
-    <div class="team-social">
-      <a href="https://www.linkedin.com/in/simeon-poungui" target="_blank" class="social-link" title="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="https://github.com/simeonpoungui" target="_blank" class="social-link" title="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://twitter.com/simeonpoungui" target="_blank" class="social-link" title="Twitter">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="mailto:simeon@simionix.com" class="social-link" title="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </div>
-  </div>
-</div>
-
-      <!-- Membre 2 - Lead Développeur -->
       <div class="team-card">
-        <!-- <div class="team-image">
-          <img src="assets/team/lead-dev.jpg" alt="Grace Nkounkou">
-        </div> -->
         <div class="team-info">
-          <h3 class="team-name">Grace Nkounkou</h3>
+          <h3 class="team-name">Siméon Poungui</h3>
+          <p class="team-position"> Lead full-stack senior et Chef de projet Digital</p>
+          <p class="team-description">
+            Lead full-stack avec plus de 4 ans d'expérience. Passionné par l'innovation 
+            technologique et la création de solutions digitales à fort impact.
+          </p>
+          <div class="team-social">
+            <a href="https://www.linkedin.com/in/simeon-poungui" target="_blank" class="social-link" title="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/simeonpoungui" target="_blank" class="social-link" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://twitter.com/simeonpoungui" target="_blank" class="social-link" title="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="mailto:simeon@simionix.com" class="social-link" title="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-info">
+          <h3 class="team-name">Naomie Fouti</h3>
           <p class="team-position">Lead Développeuse Fullstack</p>
           <p class="team-description">
             Spécialiste Angular et Node.js. Architecte de solutions robustes et évolutives, 
@@ -257,13 +290,9 @@
         </div>
       </div>
 
-      <!-- Membre 3 - Designer & UX -->
       <div class="team-card">
-        <!-- <div class="team-image">
-          <img src="assets/team/designer.jpg" alt="Marie Loufoua">
-        </div> -->
         <div class="team-info">
-          <h3 class="team-name">Marie Loufoua</h3>
+          <h3 class="team-name">Dutron NDAMBA</h3>
           <p class="team-position">Lead Designer UX/UI</p>
           <p class="team-description">
             Créative et intuitive, elle transforme vos idées en interfaces modernes 
@@ -346,14 +375,17 @@
   </div>
 </section>
 
-<!-- ==================== TRAININGS SECTION ==================== -->
+<!-- ==================== FORMATIONS SECTION ==================== -->
 <section id="formations" class="training-section scroll-animate fade-right">
   <div class="container">
     <div class="section-header">
       <span class="section-badge">Formations & Certifications</span>
       <h2 class="section-title">Formations <span class="gradient-text">Professionnelles</span></h2>
       <div class="title-bar"></div>
-      <p class="section-subtitle">Des formations complètes et pratiques pour maîtriser les technologies modernes</p>
+      <p class="section-subtitle">
+        SIMIONIX Academy forme les talents de demain avec des programmes pratiques et certifiants 
+        pour développer les compétences numériques des futurs professionnels.
+      </p>
     </div>
     <div class="training-grid">
       <div *ngFor="let training of trainingsList" class="training-card" (click)="openTraining(training.id)">
@@ -419,10 +451,10 @@
       <span class="section-badge">Ils nous font confiance</span>
     </div>
     <div class="partner-logos">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/UNESCO_logo.svg/2560px-UNESCO_logo.svg.png" alt="242 Santé">
-      <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/1/18/Logo_MTN_2019.svg/1200px-Logo_MTN_2019.svg.png" alt="Komnayo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png" alt="CyberTech">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" alt="UNESCO">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/UNESCO_logo.svg/2560px-UNESCO_logo.svg.png" alt="UNESCO">
+      <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/1/18/Logo_MTN_2019.svg/1200px-Logo_MTN_2019.svg.png" alt="MTN">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png" alt="Microsoft">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" alt="React">
     </div>
   </div>
 </section>
@@ -452,10 +484,10 @@
   <div class="container">
     <div class="cta-wrapper">
       <h2 class="cta-title">Prêt à <span class="gradient-text">innover</span> avec nous ?</h2>
-      <p class="cta-text">Que vous ayez un projet de développement, besoin d'une formation ou d'équipements, notre équipe est là pour vous accompagner. Réponse sous 24h.</p>
+      <p class="cta-text">Que vous ayez un projet de développement, besoin d'une formation ou d'accompagnement stratégique, notre équipe est là pour vous accompagner. Réponse sous 24h.</p>
       <div class="cta-buttons">
         <button class="btn-cta-primary" (click)="scrollToSection('contact')">Prendre rendez-vous <i class="fas fa-calendar-check"></i></button>
-        <button class="btn-cta-secondary" (click)="scrollToSection('services')"><i class="fas fa-building"></i> Découvrir nos services</button>
+        <button class="btn-cta-secondary" (click)="scrollToSection('poles')"><i class="fas fa-building"></i> Découvrir nos pôles</button>
       </div>
     </div>
   </div>
@@ -504,7 +536,7 @@
         </div>
         <div class="contact-social">
           <a href="https://www.facebook.com/profile.php?id=61587135123948" class="social-link"><i class="fab fa-facebook-f"></i></a>
-          <a href="" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
           <a href="https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Aorganization%3A122214190&keywords=Simionix%20Innovation&origin=ENTITY_SEARCH_HOME_HISTORY&sid=Yda" class="social-link"><i class="fab fa-linkedin-in"></i></a>
           <a href="#" class="social-link"><i class="fab fa-github"></i></a>
         </div>
@@ -596,12 +628,16 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-about">
-    <div class="footer-logo">
-  <img src="assets/logo_horizontal_simionix.png" 
-       alt="Simionix Innovation" 
-       class="footer-logo-image">
-</div>
-        <p>Des solutions digitales innovantes pour accélérer votre croissance.</p>
+        <div class="footer-logo">
+          <img src="assets/logo_horizontal.png" 
+               alt="Simionix Innovation" 
+               class="footer-logo-image">
+        </div>
+        <p>
+          SIMIONIX INNOVATION est une entreprise spécialisée dans les technologies numériques, 
+          la transformation digitale, la communication, la formation professionnelle et 
+          l'accompagnement des organisations.
+        </p>
         <div class="footer-social">
           <a href="https://www.facebook.com/profile.php?id=61587135123948"><i class="fab fa-facebook-f"></i></a>
           <a href="#"><i class="fab fa-twitter"></i></a>
@@ -613,18 +649,15 @@
         <h4>Liens rapides</h4>
         <ul>
           <li><a (click)="scrollToSection('home')">Accueil</a></li>
-          <li><a (click)="scrollToSection('services')">Services</a></li>
+          <li><a (click)="scrollToSection('poles')">Nos Pôles</a></li>
           <li><a (click)="scrollToSection('projects')">Réalisations</a></li>
           <li><a (click)="scrollToSection('contact')">Contact</a></li>
         </ul>
       </div>
       <div class="footer-links">
-        <h4>Services</h4>
+        <h4>Nos Pôles</h4>
         <ul>
-          <li>Développement Web</li>
-          <li>Applications Mobiles</li>
-          <li>Formation Numérique</li>
-          <li>Conseil IT</li>
+          <li *ngFor="let pole of expertisePoles">{{ pole.title }}</li>
         </ul>
       </div>
       <div class="footer-newsletter">
@@ -637,7 +670,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2022 Simionix Innovation. Tous droits réservés.</p>
+      <p>&copy; 2025 Simionix Innovation. Tous droits réservés.</p>
       <div class="footer-legal">
         <a>Mentions légales</a>
         <a>Politique de confidentialité</a>
@@ -648,12 +681,12 @@
 
 <!-- ==================== FLOATING ELEMENTS ==================== -->
 <div class="whatsapp-float">
-  <a href="https://wa.me/242067445795?text=Bonjour%20Simionix%20Innovation" target="_blank">
+  <a href="https://wa.me/242067050056?text=Bonjour%20Simionix%20Innovation" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
 </div>
 
 <div class="trust-badge">
   <i class="fas fa-shield-alt"></i>
-  <span>Entreprise certifiée · Réponse &lt; 24h</span>
+  <span>📞 Support client · Intervention rapide</span>
 </div>
